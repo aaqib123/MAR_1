@@ -1,0 +1,9 @@
+1nd March 
+	database schema changes
+	recode to fit new schema
+	fix med log update 
+2rd March
+	dashboard UI chagnes
+	Highlight curretn day
+	Useds can now add new medicines 
+	added elif directive

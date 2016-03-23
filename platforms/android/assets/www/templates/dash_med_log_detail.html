@@ -1,0 +1,70 @@
+
+<ion-modal-view>
+    <ion-header-bar>
+        <button class="button button-icon icon ion-chevron-left ion-ios-arrow-left" ng-click="closeModal()">Back</button>
+        <h1 class="title"> Update</h1>
+    </ion-header-bar>
+    <ion-content>
+        <div class="item item-divider">
+            <p style="margin-left: 40%">{{ formodal.med_name}}</p>  
+        </div>                      
+        <label class="item item-input ">
+            <span class="input-label">Dosage</span>
+            <input type="number" style="text-align: right;" placeholder="0" ng-model="log.amount_taken">
+        </label>
+        <label class="item item-input ">
+            <span class="input-label">Date</span>
+            <input type="date" style="text-align: right;" ng-model="log.date">
+        </label>
+        <label class="item item-input">
+            <span class="input-label">Time</span>
+            <input type="time" style="text-align: right;" ng-model="log.time">
+        </label>
+
+        <div class="list">
+            <div class="item item-divider">
+                <p style="margin-left: 40%">Status</p>  
+            </div>
+            <label class="item item-radio">
+                <input type="radio" id="radio1" name="radios" value="taken" ng-model="log.status"> 
+                <div class="item-content">
+                    Taken
+                </div>
+                <i class="radio-icon ion-checkmark"></i>
+            </label>
+            <label class="item item-radio">
+                <input type="radio" id="radio2" name="radios" value="missed" ng-model="log.status"> 
+                <div class="item-content">
+                    Missed
+                </div>
+                <i class="radio-icon ion-checkmark"></i>
+            </label>
+        </div>
+        <button ng-if="(log.status == 'missed') || (log.status == 'taken' && log.amount_taken > 0)" class="button button-positive button-block" ng-click="take_med()">
+            Save
+        </button>
+
+<!--        {{checkbox}}</br>
+        {{log}}</br>-->
+        <!--        <div class="row">
+                    <div class="col">
+                        <label class="item item-radio">
+                            <input  type="radio" value="taken"> <br><span ng-repeat-end>taken</span>
+                        </label>
+                    </div>
+                    <div class="col">
+                        <label class="item item-radio">
+                            <input  type="radio" value="missed">  <br><span ng-repeat-end>missed</span>
+                        </label> 
+                    </div>
+                    <div class="col">
+                        <label class="item item-radio">
+                            <input  type="radio" value="forgot">  <br><span ng-repeat-end>forgot</span>
+                        </label>
+                    </div>
+        
+                </div>-->
+
+
+    </ion-content>>
+</ion-modal-view>
